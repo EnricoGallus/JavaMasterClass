@@ -26,7 +26,7 @@ public class Main {
         System.out.println("Short Minimum Value = " + myMinShortValue);
         System.out.println("Short Maximum Value = " + myMaxShortValue);
 
-        long myLongValue = 100L; 
+        long myLongValue = 100L;
 
         long myMinLongValue = Long.MIN_VALUE;
         long myMaxLongValue = Long.MAX_VALUE;
@@ -37,5 +37,11 @@ public class Main {
         System.out.println(bigLongLiteralValue);
 
         short bigShortLiteralValue = 32767;
+
+        int myTotal = (myMinIntValue / 2);
+
+        byte myNewByteValue = (byte) (myMinByteValue / 2);
+
+        short myNewShortValue = (short) (myMinShortValue / 2);
     }
 }
