@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ByteShortIntLong/ByteShortIntLong.iml" filepath="$PROJECT_DIR$/ByteShortIntLong/ByteShortIntLong.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaMasterClass.iml" filepath="$PROJECT_DIR$/JavaMasterClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section3_1HelloWorld/Section3_1HelloWorld.iml" filepath="$PROJECT_DIR$/Section3_1HelloWorld/Section3_1HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section3_2ByteShortIntLong/Section3_2ByteShortIntLong.iml" filepath="$PROJECT_DIR$/Section3_2ByteShortIntLong/Section3_2ByteShortIntLong.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section3_3FloatAndDouble/Section3_3FloatAndDouble.iml" filepath="$PROJECT_DIR$/Section3_3FloatAndDouble/Section3_3FloatAndDouble.iml" />
     </modules>
   </component>
 </project>
