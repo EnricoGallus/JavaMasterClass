@@ -19,6 +19,8 @@
       <module fileurl="file://$PROJECT_DIR$/Section5_3While/Section5_3While.iml" filepath="$PROJECT_DIR$/Section5_3While/Section5_3While.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section5_4ParsingValueFromString/Section5_4ParsingValueFromString.iml" filepath="$PROJECT_DIR$/Section5_4ParsingValueFromString/Section5_4ParsingValueFromString.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section5_5ComplexChallenge/Section5_5ComplexChallenge.iml" filepath="$PROJECT_DIR$/Section5_5ComplexChallenge/Section5_5ComplexChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section5_6ReadingUserInput/Section5_6ReadingUserInput.iml" filepath="$PROJECT_DIR$/Section5_6ReadingUserInput/Section5_6ReadingUserInput.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section5_7FinalChallenges/Section5_7FinalChallenges.iml" filepath="$PROJECT_DIR$/Section5_7FinalChallenges/Section5_7FinalChallenges.iml" />
     </modules>
   </component>
 </project>
