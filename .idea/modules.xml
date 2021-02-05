@@ -17,6 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/Section5_1Switch/Section5_1Switch.iml" filepath="$PROJECT_DIR$/Section5_1Switch/Section5_1Switch.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section5_2For/Section5_2For.iml" filepath="$PROJECT_DIR$/Section5_2For/Section5_2For.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section5_3While/Section5_3While.iml" filepath="$PROJECT_DIR$/Section5_3While/Section5_3While.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section5_4ParsingValueFromString/Section5_4ParsingValueFromString.iml" filepath="$PROJECT_DIR$/Section5_4ParsingValueFromString/Section5_4ParsingValueFromString.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section5_5ComplexChallenge/Section5_5ComplexChallenge.iml" filepath="$PROJECT_DIR$/Section5_5ComplexChallenge/Section5_5ComplexChallenge.iml" />
     </modules>
   </component>
 </project>
