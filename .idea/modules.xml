@@ -24,6 +24,10 @@
       <module fileurl="file://$PROJECT_DIR$/Section6_1Classes/Section6_1Classes.iml" filepath="$PROJECT_DIR$/Section6_1Classes/Section6_1Classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section6_2Constructor/Section6_2Constructor.iml" filepath="$PROJECT_DIR$/Section6_2Constructor/Section6_2Constructor.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section6_3Inheritance/Section6_3Inheritance.iml" filepath="$PROJECT_DIR$/Section6_3Inheritance/Section6_3Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section7_1Composition/Section7_1Composition.iml" filepath="$PROJECT_DIR$/Section7_1Composition/Section7_1Composition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section7_2Encapsulation/Section7_2Encapsulation.iml" filepath="$PROJECT_DIR$/Section7_2Encapsulation/Section7_2Encapsulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section7_3Polymorphism/Section7_3Polymorphism.iml" filepath="$PROJECT_DIR$/Section7_3Polymorphism/Section7_3Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" filepath="$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" />
     </modules>
   </component>
 </project>
