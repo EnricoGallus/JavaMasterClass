@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -33,16 +34,28 @@ public class Main {
                     searchForItem();
                     break;
                 case 6:
+                    processArrayList();
+                case 7:
                     quit = true;
                     break;
             }
         }
     }
 
+    private static void processArrayList() {
+        ArrayList<String> newArray = new ArrayList<>();
+        newArray.addAll(groceryList.getGroceryList());
+
+        ArrayList<String> nextArray = new ArrayList<>(groceryList.getGroceryList());
+
+        String[] myArray = new String[groceryList.getGroceryList().size()];
+        myArray = groceryList.getGroceryList().toArray(myArray);
+    }
+
     private static void searchForItem() {
         System.out.println("Item to search for: ");
         String searchItem = scanner.nextLine();
-        if (groceryList.findItem(searchItem) != null) {
+        if (groceryList.itemExists(searchItem)) {
             System.out.println("Found " + searchItem + " in our grocery list");
         } else {
             System.out.println(searchItem + " is not in the shopping list");
@@ -50,19 +63,17 @@ public class Main {
     }
 
     private static void removeItem() {
-        System.out.print("Enter item number: ");
-        int index = scanner.nextInt();
-        scanner.nextLine();
-        groceryList.removeGroceryItem(index - 1);
+        System.out.print("Enter item name: ");
+        String item = scanner.nextLine();
+        groceryList.removeGroceryItem(item);
     }
 
     private static void modifyItem() {
-        System.out.print("Enter item number: ");
-        int index = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter item name: ");
+        String currentItem = scanner.nextLine();
         System.out.println("Enter replacement item: ");
         String newItem = scanner.nextLine();
-        groceryList.modifyGroceryItem(index - 1, newItem);
+        groceryList.modifyGroceryItem(currentItem, newItem);
     }
 
     private static void addItem() {
@@ -78,6 +89,7 @@ public class Main {
         System.out.println("\t 3 - To modify an item in the list");
         System.out.println("\t 4 - To remove an item from the list");
         System.out.println("\t 5 - To search for an item in the list");
-        System.out.println("\t 6 - To quit the application");
+        System.out.println("\t 6 - To process array list");
+        System.out.println("\t 7 - To quit the application");
     }
 }
