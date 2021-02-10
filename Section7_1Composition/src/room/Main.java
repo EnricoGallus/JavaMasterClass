@@ -12,6 +12,6 @@ public class Main {
         room.getAirConditioner().cooling();
         room.getWindow().airCirculate();
 
-        room.remoteAccess(true);
+        //room.remoteAccess(true);
     }
 }

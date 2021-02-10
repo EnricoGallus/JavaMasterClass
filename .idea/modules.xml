@@ -28,6 +28,9 @@
       <module fileurl="file://$PROJECT_DIR$/Section7_2Encapsulation/Section7_2Encapsulation.iml" filepath="$PROJECT_DIR$/Section7_2Encapsulation/Section7_2Encapsulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section7_3Polymorphism/Section7_3Polymorphism.iml" filepath="$PROJECT_DIR$/Section7_3Polymorphism/Section7_3Polymorphism.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" filepath="$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section8_1Arrays/Section8_1Arrays.iml" filepath="$PROJECT_DIR$/Section8_1Arrays/Section8_1Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section8_2ReferenceVsValyeTypes/Section8_2ReferenceVsValyeTypes.iml" filepath="$PROJECT_DIR$/Section8_2ReferenceVsValyeTypes/Section8_2ReferenceVsValyeTypes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section9_3ArrayList/Section9_3ArrayList.iml" filepath="$PROJECT_DIR$/Section9_3ArrayList/Section9_3ArrayList.iml" />
     </modules>
   </component>
 </project>
