@@ -30,7 +30,9 @@
       <module fileurl="file://$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" filepath="$PROJECT_DIR$/Section7_4MasterChallenge/Section7_4MasterChallenge.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section8_1Arrays/Section8_1Arrays.iml" filepath="$PROJECT_DIR$/Section8_1Arrays/Section8_1Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section8_2ReferenceVsValyeTypes/Section8_2ReferenceVsValyeTypes.iml" filepath="$PROJECT_DIR$/Section8_2ReferenceVsValyeTypes/Section8_2ReferenceVsValyeTypes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Section9_3ArrayList/Section9_3ArrayList.iml" filepath="$PROJECT_DIR$/Section9_3ArrayList/Section9_3ArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section8_3ArrayList/Section8_3ArrayList.iml" filepath="$PROJECT_DIR$/Section8_3ArrayList/Section8_3ArrayList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section8_4AutoAndUnBoxing/Section8_4AutoAndUnBoxing.iml" filepath="$PROJECT_DIR$/Section8_4AutoAndUnBoxing/Section8_4AutoAndUnBoxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section8_5LinkedList/Section8_5LinkedList.iml" filepath="$PROJECT_DIR$/Section8_5LinkedList/Section8_5LinkedList.iml" />
     </modules>
   </component>
 </project>
