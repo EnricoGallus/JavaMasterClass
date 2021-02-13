@@ -33,6 +33,7 @@
       <module fileurl="file://$PROJECT_DIR$/Section8_3ArrayList/Section8_3ArrayList.iml" filepath="$PROJECT_DIR$/Section8_3ArrayList/Section8_3ArrayList.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section8_4AutoAndUnBoxing/Section8_4AutoAndUnBoxing.iml" filepath="$PROJECT_DIR$/Section8_4AutoAndUnBoxing/Section8_4AutoAndUnBoxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section8_5LinkedList/Section8_5LinkedList.iml" filepath="$PROJECT_DIR$/Section8_5LinkedList/Section8_5LinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section9_1Interfaces/Section9_1Interfaces.iml" filepath="$PROJECT_DIR$/Section9_1Interfaces/Section9_1Interfaces.iml" />
     </modules>
   </component>
 </project>
