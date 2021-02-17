@@ -1,4 +1,4 @@
-package playlist;
+package innerPlaylist;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

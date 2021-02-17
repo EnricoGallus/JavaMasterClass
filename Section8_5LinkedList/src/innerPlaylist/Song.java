@@ -1,4 +1,4 @@
-package playlist;
+package innerPlaylist;
 
 public class Song {
     private String title;
