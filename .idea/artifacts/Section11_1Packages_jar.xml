@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="Section11_1Packages:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Section11_1Packages_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Section11_1Packages.jar">
+        <element id="module-output" name="Section11_1Packages" />
+      </element>
+    </root>
+  </artifact>
+</component>

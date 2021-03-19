@@ -5,6 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/JavaMasterClass.iml" filepath="$PROJECT_DIR$/JavaMasterClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section10_1Generics/Section10_1Generics.iml" filepath="$PROJECT_DIR$/Section10_1Generics/Section10_1Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section10_GenericClass/Section10_GenericClass.iml" filepath="$PROJECT_DIR$/Section10_GenericClass/Section10_GenericClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section11_1Packages/Section11_1Packages.iml" filepath="$PROJECT_DIR$/Section11_1Packages/Section11_1Packages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section11_2PackageChallenge/Section11_2PackageChallenge.iml" filepath="$PROJECT_DIR$/Section11_2PackageChallenge/Section11_2PackageChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section11_3PackageTest/Section11_3PackageTest.iml" filepath="$PROJECT_DIR$/Section11_3PackageTest/Section11_3PackageTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Section11_4Scope/Section11_4Scope.iml" filepath="$PROJECT_DIR$/Section11_4Scope/Section11_4Scope.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section3_1HelloWorld/Section3_1HelloWorld.iml" filepath="$PROJECT_DIR$/Section3_1HelloWorld/Section3_1HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section3_2ByteShortIntLong/Section3_2ByteShortIntLong.iml" filepath="$PROJECT_DIR$/Section3_2ByteShortIntLong/Section3_2ByteShortIntLong.iml" />
       <module fileurl="file://$PROJECT_DIR$/Section3_3FloatAndDouble/Section3_3FloatAndDouble.iml" filepath="$PROJECT_DIR$/Section3_3FloatAndDouble/Section3_3FloatAndDouble.iml" />
