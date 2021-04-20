@@ -11,14 +11,34 @@ public class Basket {
         this.list = new TreeMap<>();
     }
 
-    public int addToBasket(StockItem item, int quantity) {
+    public boolean addToBasket(StockItem item, int quantity) {
         if (item != null && quantity > 0) {
             int inBasket = list.getOrDefault(item, 0);
             list.put(item, inBasket + quantity);
-            return inBasket;
+            return true;
         }
 
-        return 0;
+        return false;
+    }
+
+    public boolean removeFromBasket(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
+            int inBasket = list.getOrDefault(item, 0);
+            int newQuantity = inBasket - quantity;
+            if (newQuantity > 0) {
+                list.put(item, newQuantity);
+                return true;
+            } else if (newQuantity == 0) {
+                list.remove(item);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void checkout() {
+        this.list.clear();
     }
 
     public Map<StockItem, Integer> Items() {

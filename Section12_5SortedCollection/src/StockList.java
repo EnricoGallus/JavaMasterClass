@@ -13,14 +13,47 @@ public class StockList {
         if (item != null) {
             StockItem inStock = list.getOrDefault(item.getName(), item);
             if (inStock != item) {
-                item.adjustStock(inStock.quantityInStock());
+                item.adjustStock(inStock.availableQuantity());
             }
 
             list.put(item.getName(), item);
-            return item.quantityInStock();
+            return item.availableQuantity();
         }
 
         return 0;
+    }
+
+    public boolean sellStock(String itemName, int quantity) {
+        StockItem inStock = list.get(itemName);
+        if (inStock != null && quantity > 0) {
+            return inStock.finalizeStock(-quantity);
+        }
+
+        return false;
+        /*StockItem inStock = list.getOrDefault(itemName, null);
+        if (inStock != null && inStock.availableQuantity() >= quantity && quantity > 0) {
+            return inStock.finalizeStock(-quantity);
+        }
+
+        return false;*/
+    }
+
+    public boolean reserveStock(String itemName, int quantity) {
+        StockItem inStock = list.get(itemName);
+        if (inStock != null && quantity > 0) {
+            return inStock.reserveStock(quantity);
+        }
+
+        return false;
+    }
+
+    public boolean unreserveStock(String itemName, int quantity) {
+        StockItem inStock = list.get(itemName);
+        if (inStock != null && quantity > 0) {
+            return inStock.unreserveStock(quantity);
+        }
+
+        return false;
     }
 
     public Map<String, Double> PriceList() {
@@ -30,16 +63,6 @@ public class StockList {
         }
 
         return Collections.unmodifiableMap(prices);
-    }
-
-    public int sellStock(String itemName, int quantity) {
-        StockItem inStock = list.getOrDefault(itemName, null);
-        if (inStock != null && inStock.quantityInStock() >= quantity && quantity > 0) {
-            inStock.adjustStock(-quantity);
-            return quantity;
-        }
-
-        return 0;
     }
 
     public StockItem get(String itemName) {
@@ -56,8 +79,8 @@ public class StockList {
         double totalCost = 0;
         for (Map.Entry<String, StockItem> item : list.entrySet()) {
             StockItem stockItem = item.getValue();
-            double itemValue = stockItem.getPrice() * stockItem.quantityInStock();
-            s = s + stockItem + ". There are " + stockItem.quantityInStock() + " in stock. Value of items is ";
+            double itemValue = stockItem.getPrice() * stockItem.availableQuantity();
+            s = s + stockItem + ". There are " + stockItem.availableQuantity() + " in stock. Value of items is ";
             s = s + String.format("%.2f", itemValue) + "\n";
             totalCost += itemValue;
         }
