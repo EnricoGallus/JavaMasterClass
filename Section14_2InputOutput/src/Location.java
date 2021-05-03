@@ -13,6 +13,11 @@ public class Location {
         this.exits.put("Q", 0);
     }
 
+    public Location(int locationID, String description, Map<String, Integer> exits) {
+        this(locationID, description);
+        this.exits.putAll(exits);
+    }
+
     public void addExit(String direction, int location) {
         exits.put(direction, location);
     }

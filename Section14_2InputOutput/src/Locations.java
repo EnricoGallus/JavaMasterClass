@@ -6,13 +6,18 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
 
     public static void main(String[] args) throws IOException {
-        try (BufferedWriter locationWriter = new BufferedWriter(new FileWriter("Section14_2InputOutput/locations.txt"));
-             BufferedWriter directionWriter = new BufferedWriter(new FileWriter("Section14_2InputOutput/directions.txt"))) {
+        try (DataOutputStream locationFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("Section14_2InputOutput/locations.dat")))) {
             for (Location location: locations.values()) {
-                locationWriter.write(location.getLocationID() + "," + location.getDescription() + "\n");
-                for (String direction: location.getExits().keySet()) {
+                locationFile.writeInt(location.getLocationID());
+                locationFile.writeUTF(location.getDescription());
+                System.out.println("Writing location " + location.getLocationID() + " : " + location.getDescription());
+                System.out.println("Writing " + (location.getExits().size() - 1) + " exits");
+                locationFile.writeInt(location.getExits().size() - 1);
+                for (String direction : location.getExits().keySet()) {
                     if (!direction.equalsIgnoreCase("Q")) {
-                        directionWriter.write(location.getLocationID() + "," + direction + "," + location.getExits().get(direction) + "\n");
+                        System.out.println("\t\t" + direction + "," + location.getExits().get(direction));
+                        locationFile.writeUTF(direction);
+                        locationFile.writeInt(location.getExits().get(direction));
                     }
                 }
             }
@@ -20,7 +25,31 @@ public class Locations implements Map<Integer, Location> {
     }
 
     static {
-        try(Scanner locationReader = new Scanner(new BufferedReader(new FileReader("Section14_2InputOutput/locations_big.txt"))).useDelimiter(",");
+        try (DataInputStream locationFile = new DataInputStream(new BufferedInputStream(new FileInputStream("Section14_2InputOutput/locations.dat")))) {
+            boolean eof = false;
+            while (!eof) {
+                try {
+                    Map<String, Integer> exits = new LinkedHashMap<>();
+                    int locationId = locationFile.readInt();
+                    String description = locationFile.readUTF();
+                    int numExits = locationFile.readInt();
+                    System.out.println("Read location " + locationId + " : " + description);
+                    System.out.println("Found " + numExits + " exits");
+                    for (int i=0; i < numExits; i++) {
+                        String direction = locationFile.readUTF();
+                        int destination = locationFile.readInt();
+                        exits.put(direction, destination);
+                        System.out.println("\t\t" + direction + "," + destination);
+                    }
+                    locations.put(locationId, new Location(locationId, description, exits));
+                } catch (EOFException e) {
+                    eof = true;
+                }
+            }
+        } catch (IOException ioException) {
+            System.out.println("IO Exception " + ioException);
+        }
+        /*try(Scanner locationReader = new Scanner(new BufferedReader(new FileReader("Section14_2InputOutput/locations_big.txt"))).useDelimiter(",");
             Scanner directionReader = new Scanner(new BufferedReader(new FileReader("Section14_2InputOutput/directions_big.txt"))).useDelimiter(",")) {
             while (locationReader.hasNextLine()) {
                 int location = locationReader.nextInt();
@@ -41,7 +70,7 @@ public class Locations implements Map<Integer, Location> {
             }
         } catch (IOException e) {
             throw new RuntimeException("reading location/direction files failed");
-        }
+        }*/
     }
 
     @Override
