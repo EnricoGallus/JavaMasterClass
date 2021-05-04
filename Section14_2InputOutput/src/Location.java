@@ -1,7 +1,10 @@
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Location {
+public class Location implements Serializable {
+    private final long serialVersionUID = 1L;
+
     private final int locationID;
     private final String description;
     private final Map<String, Integer> exits;
