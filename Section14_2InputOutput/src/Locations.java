@@ -11,23 +11,6 @@ public class Locations implements Map<Integer, Location> {
                 locationFile.writeObject(location);
             }
         }
-
-        /*try (DataOutputStream locationFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("Section14_2InputOutput/locations.dat")))) {
-            for (Location location: locations.values()) {
-                locationFile.writeInt(location.getLocationID());
-                locationFile.writeUTF(location.getDescription());
-                System.out.println("Writing location " + location.getLocationID() + " : " + location.getDescription());
-                System.out.println("Writing " + (location.getExits().size() - 1) + " exits");
-                locationFile.writeInt(location.getExits().size() - 1);
-                for (String direction : location.getExits().keySet()) {
-                    if (!direction.equalsIgnoreCase("Q")) {
-                        System.out.println("\t\t" + direction + "," + location.getExits().get(direction));
-                        locationFile.writeUTF(direction);
-                        locationFile.writeInt(location.getExits().get(direction));
-                    }
-                }
-            }
-        }*/
     }
 
     static {
@@ -44,58 +27,13 @@ public class Locations implements Map<Integer, Location> {
                     eof = true;
                 }
             }
+        } catch (InvalidClassException e) {
+            System.out.println("Invalid Class Exception " + e);
         } catch (IOException e) {
-            System.out.println("IO Exception");
+            System.out.println("IO Exception" + e);
         } catch (ClassNotFoundException e) {
-            System.out.println("Class Not Found exception");
+            System.out.println("Class Not Found exception" + e);
         }
-
-        /*try (DataInputStream locationFile = new DataInputStream(new BufferedInputStream(new FileInputStream("Section14_2InputOutput/locations.dat")))) {
-            boolean eof = false;
-            while (!eof) {
-                try {
-                    Map<String, Integer> exits = new LinkedHashMap<>();
-                    int locationId = locationFile.readInt();
-                    String description = locationFile.readUTF();
-                    int numExits = locationFile.readInt();
-                    System.out.println("Read location " + locationId + " : " + description);
-                    System.out.println("Found " + numExits + " exits");
-                    for (int i=0; i < numExits; i++) {
-                        String direction = locationFile.readUTF();
-                        int destination = locationFile.readInt();
-                        exits.put(direction, destination);
-                        System.out.println("\t\t" + direction + "," + destination);
-                    }
-                    locations.put(locationId, new Location(locationId, description, exits));
-                } catch (EOFException e) {
-                    eof = true;
-                }
-            }
-        } catch (IOException ioException) {
-            System.out.println("IO Exception " + ioException);
-        }*/
-        /*try(Scanner locationReader = new Scanner(new BufferedReader(new FileReader("Section14_2InputOutput/locations_big.txt"))).useDelimiter(",");
-            Scanner directionReader = new Scanner(new BufferedReader(new FileReader("Section14_2InputOutput/directions_big.txt"))).useDelimiter(",")) {
-            while (locationReader.hasNextLine()) {
-                int location = locationReader.nextInt();
-                locationReader.skip(locationReader.delimiter());
-                String description = locationReader.nextLine();
-                System.out.println("Imported loc:" + location + ": " + description);
-                locations.put(location, new Location(location, description));
-            }
-
-            while (directionReader.hasNextLine()) {
-                String[] data = directionReader.nextLine().split(",");
-                int location = Integer.parseInt(data[0]);
-                String direction = data[1];
-                int destination = Integer.parseInt(data[2]);
-                System.out.println("Imported exit for location: " + location + ": " + direction + ": " + destination);
-                Location targetLocation = locations.get(location);
-                targetLocation.addExit(direction, destination);
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("reading location/direction files failed");
-        }*/
     }
 
     @Override
