@@ -2,17 +2,21 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Locations implements Map<Integer, Location> {
 
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
 
     public static void main(String[] args) throws IOException {
-        Path locPath = FileSystems.getDefault().getPath("Section14_4NIO/locations_big.txt");
+        Path locPath = FileSystems.getDefault().getPath("Section14_4NIO/locations.dat");
+        try (ObjectOutputStream locFile = new ObjectOutputStream(new BufferedOutputStream(Files.newOutputStream(locPath)))) {
+            for (Location location : locations.values()) {
+                locFile.writeObject(location);
+            }
+        }
+
+        /*Path locPath = FileSystems.getDefault().getPath("Section14_4NIO/locations_big.txt");
         Path dirPath = FileSystems.getDefault().getPath("Section14_4NIO/directions_big.txt");
         try (BufferedWriter locFile = Files.newBufferedWriter(locPath);
              BufferedWriter dirFile = Files.newBufferedWriter(dirPath)) {
@@ -26,30 +30,58 @@ public class Locations implements Map<Integer, Location> {
             }
         } catch (IOException ex) {
             System.out.println("IOException: " + ex.getMessage());
-        }
+        }*/
     }
 
     static {
-        try (ObjectInputStream locationFile = new ObjectInputStream(new BufferedInputStream(new FileInputStream("Section14_2InputOutput/locations.dat")))) {
+        Path locPath = FileSystems.getDefault().getPath("Section14_4NIO/locations.dat");
+        try (ObjectInputStream locFile = new ObjectInputStream(new BufferedInputStream(Files.newInputStream(locPath)))) {
             boolean eof = false;
             while (!eof) {
                 try {
-                    Location location = (Location) locationFile.readObject();
-                    System.out.println("Read location" + location.getLocationID() + ": " + location.getDescription());
-                    System.out.println("Found " + (location.getExits().size() - 1) + " exits");
-
+                    Location location = (Location)locFile.readObject();
                     locations.put(location.getLocationID(), location);
                 } catch (EOFException e) {
                     eof = true;
                 }
             }
-        } catch (InvalidClassException e) {
-            System.out.println("Invalid Class Exception " + e);
-        } catch (IOException e) {
-            System.out.println("IO Exception" + e);
-        } catch (ClassNotFoundException e) {
-            System.out.println("Class Not Found exception" + e);
+        } catch (InvalidClassException ex) {
+            System.out.println("InvalidCastException: " + ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("IOException:" + ex.getMessage());
+        } catch (ClassNotFoundException ex) {
+            System.out.println("ClassNotFoundException: " + ex.getMessage());
         }
+
+        /*Path locPath = FileSystems.getDefault().getPath("Section14_4NIO/locations_big.txt");
+        Path dirPath = FileSystems.getDefault().getPath("Section14_4NIO/directions_big.txt");
+        try (Scanner scanner = new Scanner(Files.newBufferedReader(locPath))) {
+            scanner.useDelimiter(",");
+            while (scanner.hasNextLine()) {
+                int locationId = scanner.nextInt();
+                scanner.skip(scanner.delimiter());
+                String description = scanner.nextLine();
+                System.out.println("Imported loc: " + locationId + ": " + description);
+                locations.put(locationId, new Location(locationId, description, null));
+            }
+
+        } catch (IOException ex) {
+            System.out.println("IOException: " + ex.getMessage());
+        }
+
+        try (BufferedReader dirFile = Files.newBufferedReader(dirPath)) {
+            String input;
+            while ((input = dirFile.readLine()) != null) {
+                String[] data = input.split(",");
+                int locationId = Integer.parseInt(data[0]);
+                String direction = data[1];
+                int destination = Integer.parseInt(data[2]);
+                locations.get(locationId).getExits().put(direction, destination);
+                System.out.println(locationId + ": " + direction + ": " + destination);
+            }
+        } catch (IOException ex) {
+            System.out.println("IOException: " + ex.getMessage());
+        }*/
     }
 
     @Override
